@@ -214,8 +214,6 @@ body{
    padding:0 10px;
 }
 #code{
-
-  
     border-radius:10px;
     background-color:var(--secondary--neutral-color);
     box-shadow:6px 6px 10px -1px rgba(0,0,0,0.15),-6px -6px 10px -1px rgba(255,255,255,0.7); 
@@ -241,7 +239,24 @@ body{
         var(--color1) 210deg 340deg,
         var(--color3) 340deg 360deg
     );
-   
+}
+#code .link{
+    color:var(--color2);
+    position: relative;
+}
+.link::after{
+    content:'';
+    position: absolute;
+    bottom:-2px;
+    left:0;
+    width:0;
+    height:4px;
+    transition: 0.5s;
+    background-color: var(--color1);
+}
+
+.link:hover::after{
+    width:100%;
 }
 .detial{
     width:100%;
@@ -273,4 +288,71 @@ body{
 .detial>div:nth-child(3)
 {
     color:var(--color3);
+}
+
+@media screen and (max-width:1200px) 
+{
+    .projects{  
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;   
+    }
+    body{
+        grid-template:100px 1fr / 200px 1fr;
+        grid-template-areas: " sidebar header"
+                              "sidebar main ";
+    }
+    .leetcode{
+        width:140px;
+        height:140px;
+        border-radius: 50%;
+       
+    }
+}
+@media screen and (max-width:800px) 
+{
+    #profile-img{
+       
+        width:50px;
+        height: 50px;
+    }
+    .name{
+        >p{
+            font-size: 12px;
+        }
+        >h2{
+            font-size:14px;
+        }
+    }
+    .search-bar{
+        >i{
+            font-size: 15px;
+        }
+        >.search-ip{
+            height:40px;
+        }
+    }
+    #header>i{
+        font-size:18px;
+    }
+    .projects{  
+      padding:10px;  
+    }
+    .leetcode{
+        width:100px;
+        height:100px;
+        border-radius: 50%;
+       
+    }
+    .detial>div{
+        >strong{
+            font-size: 14px;
+        }
+        >p{
+            font-size: 14px;
+        }
+    }
+}
+@media screen and (max-width:500px)
+{
+
 }
